@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router";
 
-export const BackgroundColorChanger = () =>{
-    const [bg, setBg] = useState("");
-  const params = useParams();
-  useEffect(() => {
-    setBg(params.colorname);
-    console.log(bg);
-  }, [bg]);
-  return <main style={{ height: "100vh", backgroundColor: `${bg}` }}></main>;
-}
+export const BackgroundColorChanger = () => {
+  let params = useParams();
+
+  return (
+    <main style={{ height: "100vh", backgroundColor: params.colorname }}>
+      Background Color Changer
+    </main>
+  );
+};
