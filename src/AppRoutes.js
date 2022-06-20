@@ -1,31 +1,16 @@
-import React from 'react'
- import {BrowserRouter,Routes,Route,Link } from "react-router-dom";
-import { BackgroundColorChanger } from './Pages/BackgroundColorChanger'
-import { Calculator } from './Pages/Calculator'
-import { Index } from './Pages/Index'
+import React from "react";
+import { Route, Routes } from "react-router";
 
-export const AppRoutes = () =>{
-    return (
-   <>
-  <div>
-    <BrowserRouter>
-<div>
-<Link to='./Pages/Calculator>calculator</Link>
-<Link to= './Pages/Index'>Index</Link>
- <Link to= './Pages/BackgroundColorChanger'>background</Link>
-</div>
+import { BackgroundColorChanger } from "./Pages/BackgroundColorChanger";
+import { Calculator } from "./Pages/Calculator";
+import { Index } from "./Pages/Index";
 
-<div>
-<Routes>
-<Route path="./Pages/Calculator" element={<calculator/>}/>
-<Route path="./Pages/Index" element={Index/>}/>
-<Route path= element='./Pages/BackgroundColorChanger'{<background/>}/>
-</Routes>
-</div>
-</BrowserRouter>
-</div>
-</>
-  )
-}
-    )
-}
+export const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/bgcolor/:colorname" element={<BackgroundColorChanger />} />
+      <Route path="/calculator" element={<Calculator />} />
+    </Routes>
+  );
+};
